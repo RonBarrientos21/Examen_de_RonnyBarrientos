@@ -1,8 +1,9 @@
+#include <strings.h>
 #include <stdio.h>
 #include <iostream>
 
 using namespace std;
-int factorial(int n)
+int factorial(int n) //funcion para determinar factoriales
 {
     int i, //variable local//
     producto = 1;
@@ -11,14 +12,14 @@ int factorial(int n)
         producto *= i;
     }
 
-    return producto;
+    return producto; //final de funcion para determinar factoriales
 }
 
 int main(void) {
 
-
+//procedimiento para determinar factoriales
     int num, fact;
-    printf("Ingrese un entero igual o mayor que cero: ");
+    printf("Ingrese un entero igual o mayor que cero para determinar su factorial: ");
     scanf("%d", &num);
     if (num < 0) {
         printf("El factorial de un numero negativo (%d) es indefinido\n", num);
@@ -27,6 +28,7 @@ int main(void) {
         printf("El factorial de %d es %d\n", num, fact);
 
     }
+    //PROCEDIMIENTO PARA GENERAR TABLA DE MULTIPLICAR PARA DETERMINADO NUMERO
     int N;
     cout << "Ingrese un numero entero positivo: " << endl;
     cin >> N;
@@ -34,7 +36,7 @@ int main(void) {
     for (int i = 1; i <= 10; i++) {
         cout << N << " x " << i << " = " << N * i << endl;
     }
-    int N2;
+    int N2; //PROCEDIMIENTO PARA DETERMINAR NUMERO PARES O IMPARES Y CUANTOS SON DE CADA UNO
     int numero;
     int contPares = 0;
     int contImpares = 0;
@@ -56,7 +58,7 @@ int main(void) {
     cout << "La cant de pares es:" << contPares << endl;
     cout << "La cant de impares es:" << contImpares << endl;
 
-    int num2;
+    int num2; //PROCEDIMIENTO PARA DETERMINAR DIAS DE LA SEMANA LABORALES USANDO SWTICH
     cout<<"ELIJA UN DIA DE LA SEMANA PARA SABER SI ES UN DIA LABORAL O NO: " <<endl;
 
     cout<<"PARA ELEGIR EL LUNES INGRESE EL NUMERO 1"<<endl;
@@ -78,7 +80,7 @@ int main(void) {
             cout << "MIERCOLES un dia laboral";
             break;
         case 4:
-            cout << "JUEVES un dia laboral";
+            cout << "JUEVES es un dia laboral";
             break;
         case 5:
             cout << "VIERNES es un dia laboral ";
@@ -90,7 +92,35 @@ int main(void) {
             cout << "DOMINGO no es un dia laboral";
             break;
         default:
-            cout << "Error de opcion.";
+            cout << "Error de opcion." <<endl;
     }
+
+    {
+        char pass[10]; //PROCEDIMIENTO PARA INGRESAR CONTRASENA CON TRES INTENTOS
+        int correcto;
+        int intento;
+        const char contrasena[] = "123456"; //123456 es la contraseña que se debe introducir
+
+
+        intento = 0;
+        correcto = 0;
+        printf("Introduzca la contrasena: ");
+        gets(pass);
+        printf("\n");
+        if (strcmp(pass, contrasena) == 0) correcto = 1;
+        while ((correcto == 0) && (intento < 3)) {
+            intento++;
+            printf("Contrasena incorrecta. %i intento: ", intento);
+            gets(pass);
+            printf("\n");
+            if (strcmp(pass, contrasena) == 0) correcto = 1;
+        }
+        if (correcto == 0) printf("HA EXEDIDO EL NUMERO DE INTENTOS SU CONTRASENA ES INCORRECTA");
+        else {
+            printf("Bienvenido a la base de datos.");
+
+        }
+    }
+
     return (0);
 }
