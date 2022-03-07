@@ -56,6 +56,41 @@ int main(void) {
     cout << "La cant de pares es:" << contPares << endl;
     cout << "La cant de impares es:" << contImpares << endl;
 
+    int num2;
+    cout<<"ELIJA UN DIA DE LA SEMANA PARA SABER SI ES UN DIA LABORAL O NO: " <<endl;
 
+    cout<<"PARA ELEGIR EL LUNES INGRESE EL NUMERO 1"<<endl;
+    cout<<"PARA ELEGIR EL MARTES INGRESE EL NUMERO 2"<<endl;
+    cout<<"PARA ELEGIR EL MIERCOLES INGRESE EL NUMERO 3"<<endl;
+    cout<<"PARA ELEGIR EL JUEVES INGRESE EL NUMERO 4"<<endl;
+    cout<<"PARA ELEGIR EL VIERNES INGRESE EL NUMERO 5"<<endl;
+    cout<<"PARA ELEGIR EL SABADO INGRESE EL NUMERO 6"<<endl;
+    cout<<"PARA ELEGIR EL DOMINGO INGRESE EL NUMERO 7"<<endl;
+    cin>>num2;
+    switch (num2) {
+        case 1:
+            cout << "LUNES es un dia laboral";
+            break;
+        case 2:
+            cout << "MARTES es un dia laboral";
+            break;
+        case 3:
+            cout << "MIERCOLES un dia laboral";
+            break;
+        case 4:
+            cout << "JUEVES un dia laboral";
+            break;
+        case 5:
+            cout << "VIERNES es un dia laboral ";
+            break;
+        case 6:
+            cout << "SABADO no es un dia laboral";
+            break;
+        case 7:
+            cout << "DOMINGO no es un dia laboral";
+            break;
+        default:
+            cout << "Error de opcion.";
+    }
     return (0);
 }
